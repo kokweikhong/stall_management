@@ -195,36 +195,6 @@
 	</div>
 </div>
 
-<!-- Today Sales -->
-<div class="responsive-container mt-6 flex justify-center">
-	<div
-		class="mx-auto max-w-2xl rounded-2xl border border-gray-200 bg-white/90 p-6 shadow-xl sm:p-8"
-	>
-		<h2 class="mb-4 flex items-center gap-2 text-xl font-bold text-yellow-700">
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				class="h-6 w-6 text-yellow-400"
-				fill="none"
-				viewBox="0 0 24 24"
-				stroke="currentColor"
-				><path
-					stroke-linecap="round"
-					stroke-linejoin="round"
-					stroke-width="2"
-					d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2zm0 0c-4.418 0-8 1.79-8 4v2h16v-2c0-2.21-3.582-4-8-4z"
-				/></svg
-			>
-			Today's Total Sales
-		</h2>
-		<div class="mt-6 flex flex-col items-center gap-2 text-center text-lg font-semibold">
-			<span class="text-3xl text-yellow-700"
-				>RM
-				{payedOrders.reduce((total, order) => total + order.totalPrice, 0) / 100}</span
-			>
-		</div>
-	</div>
-</div>
-
 <div class="responsive-container mt-6 flex justify-center">
 	<button
 		class="mb-4 rounded-lg bg-green-600 px-6 py-2 font-semibold text-white shadow transition hover:bg-green-700"
@@ -237,6 +207,32 @@
 	{#if showPaidOrdersModal}
 		<div class="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
 			<div class="animate-fade-in relative w-full max-w-md rounded-2xl bg-white p-8 shadow-2xl">
+				<div
+					class="mx-auto my-4 max-w-2xl rounded-2xl border border-gray-200 bg-white/90 p-6 shadow-xl sm:p-8"
+				>
+					<h2 class="mb-4 flex items-center gap-2 text-xl font-bold text-yellow-700">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							class="h-6 w-6 text-yellow-400"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke="currentColor"
+							><path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2zm0 0c-4.418 0-8 1.79-8 4v2h16v-2c0-2.21-3.582-4-8-4z"
+							/></svg
+						>
+						Today's Total Sales
+					</h2>
+					<div class="mt-6 flex flex-col items-center gap-2 text-center text-lg font-semibold">
+						<span class="text-3xl text-yellow-700"
+							>RM
+							{payedOrders.reduce((total, order) => total + order.totalPrice, 0) / 100}</span
+						>
+					</div>
+				</div>
 				<button
 					class="absolute top-3 right-3 text-2xl font-bold text-gray-400 hover:text-gray-700 focus:outline-none"
 					onclick={() => (showPaidOrdersModal = false)}
