@@ -1,5 +1,5 @@
 <script lang="ts">
-	import "../app.css"
+	import '../app.css';
 	import favicon from '$lib/assets/favicon.svg';
 
 	let { children } = $props();
@@ -14,10 +14,10 @@
 </main>
 
 <style lang="postcss">
-  @reference "tailwindcss";
+	@reference "tailwindcss";
 
-  main {
-	/* container style */
-	@apply max-w-4xl mx-auto p-4;
-  }
+	main {
+		/* container style */
+		@apply mx-auto max-w-4xl p-4;
+	}
 </style>

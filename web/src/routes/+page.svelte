@@ -172,6 +172,10 @@
 	}
 </script>
 
+<div class="responsive-container my-6 text-center text-orange-500">
+	<h1 class="text-2xl font-bold">酱美丽 | 猪肠粉</h1>
+</div>
+
 <!-- Table Numbers -->
 <div class="responsive-container">
 	<div class="flex flex-wrap gap-4">
