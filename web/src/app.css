@@ -1,7 +1,65 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @layer base {
-  body {
-    @apply bg-gray-100 text-gray-900;
-  }
+	html {
+		font-size: 16px;
+		box-sizing: border-box;
+		-webkit-tap-highlight-color: transparent;
+	}
+	body {
+		@apply min-h-screen bg-gray-100 text-gray-900 antialiased;
+		font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+		margin: 0;
+		padding: 0;
+		overflow-x: hidden;
+	}
+}
+
+@layer utilities {
+	.responsive-container {
+		@apply mx-auto max-w-full px-2 sm:px-4 md:px-8;
+	}
+	.touch-target {
+		min-height: 44px;
+		min-width: 44px;
+		@apply flex items-center justify-center;
+	}
+	.text-balance {
+		text-wrap: balance;
+	}
+}
+
+/* Custom scrollbar for mobile */
+::-webkit-scrollbar {
+	width: 8px;
+	background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+	background: #c1c1c1;
+	border-radius: 4px;
+}
+
+@media (max-width: 640px) {
+	html {
+		font-size: 15px;
+	}
+	.grid-cols-3,
+	.md\:grid-cols-6,
+	.lg\:grid-cols-9 {
+		grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+	}
+	.sm\:grid-cols-2,
+	.md\:grid-cols-3 {
+		grid-template-columns: 1fr !important;
+	}
+	.responsive-container {
+		padding-left: 0.5rem;
+		padding-right: 0.5rem;
+	}
+}
+
+@media (max-width: 400px) {
+	html {
+		font-size: 14px;
+	}
 }
